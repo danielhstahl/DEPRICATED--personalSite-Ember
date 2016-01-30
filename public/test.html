@@ -1,0 +1,89 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--<link rel="stylesheet" href="assets/css/styles.css">-->
+    <script src="assets/react/react.min.js"></script>
+    <script src="assets/react/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script type='text/babel' src="assets/js/site-brains.js"></script>
+    <style>
+        .contact-image{
+            margin:0px;
+            padding:0px;
+            height: 60px!important;
+            width: 60px!important;
+        } 
+        .no-padding-no-margin{
+            padding:0px;
+            margin:0px;
+        }
+        .no-border{
+            border:0px;
+        }
+        /*.contact{
+            background-color:cadetblue;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer mdl-color--white-900 no-border">
+           <!-- <span class="mdl-layout-title">-->
+                <div class="mdl-grid no-padding-no-margin"> 
+                    <div class='mdl-cell mdl-cell--3-col contact-image'>
+                        <img class="avatar icon float-right contact-image" src="/assets/images/avatar.png">
+                    </div>
+                    <div class='mdl-cell mdl-cell--3-col contact-image'>
+                        <a href='https://www.linkedin.com/profile/view?id=AAIAAAYja3AB_fq6IhUtF5CBw1yjTHheP8YIooE&trk=nav_responsive_tab_profile'>
+                            <img src='assets/icons/linkedin.svg' class='icon float-right'>
+                        </a>
+                    </div> 
+                    <div class='mdl-cell mdl-cell--3-col contact-image'>
+                        <a href='https://plus.google.com/u/0/+DanielStahl1138'>
+                            <img src='assets/icons/googleplus.svg' class='icon float-right'>
+                        </a>
+                    </div> 
+                    <div class='mdl-cell mdl-cell--3-col contact-image'>
+                        <a href='https://github.com/phillyfan1138'>
+                            <img src='assets/icons/github.svg' class='icon float-right'>
+                        </a>
+                    </div>
+                    
+                </div>
+            <!--</span>-->
+            <nav class="mdl-navigation mdl-color--white-800">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!--<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Welcome</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                  </div>
+                  <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                      Get Started
+                    </a>
+                  </div>
+                  <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                      <i class="material-icons">share</i>
+                    </button>
+                  </div>
+                </div>-->
+                <div id="content"></div>
+            </div>
+        </main>
+    </div>
+    
+</body>

@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MaterialEmber</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MaterialEmber</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+        {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/material-ember.css">
+        <link rel="stylesheet" href="assets/vendor.css">
+        <link rel="stylesheet" href="assets/material-ember.css">
+        <!--<link rel="stylesheet" href="assets/css/styles.css">-->
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.grey-teal.min.css">
 
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
-
-    <script src="assets/vendor.js"></script>
-    <script src="assets/material-ember.js"></script>
-
-    {{content-for "body-footer"}}
-  </body>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <style>
+            .contact-image{
+                margin:0px;
+                padding:0px;
+                height: 60px!important;
+                width: 60px!important;
+            } 
+            .contact-icon{
+                margin:0px;
+                padding:0px;
+                height: 80px!important;
+                width: 80px!important;
+            } 
+            .align-contact{
+                height:60px!important;
+            }
+            .no-padding-no-margin{
+                padding:0px;
+                margin:0px;
+            }
+            .no-border{
+                border:0px;
+            }
+            .text-color-contact{
+                color:#c1c1c1!important;
+                
+            }
+            .right-align{
+                text-align:right;
+                float:right;
+            }
+            .name-and-avatar{
+                position: relative;
+                top: 50%;
+                transform: translateY(20%);
+            }
+            .no-bottom-margin{
+                margin-bottom:0px;
+            }
+            .avatar{
+                border-radius:50%;
+            }
+            .vertical-space{
+                padding-top:40px;
+                /*position:fixed;
+                background-color: white;*/
+            }
+            .max-width{
+                max-width:800px;
+            }
+           /* body{
+                font-size:16px!important;
+            }*/
+            .grey-font-900{
+                color:#212121!important;
+            }
+            .grey-font-800{
+                color:#424242!important;
+            }
+            a.text-color-contact:hover{
+                background-color:#212121!important;
+            }
+           
+            a.text-color-contact:not(.active)>.hide{
+                visibility:hidden;
+            }
+            #summary-card>.mdl-card__title{
+                background: url('../assets/images/SingaporeSkyline-small.jpg') center / cover;
+            }
+            .card-style{
+                height: 120px;
+            }
+            a{
+               color: #424242;
+            }
+        </style>
+        {{content-for "head-footer"}}
+    </head>
+    <body>
+        {{content-for "body"}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="assets/vendor.js"></script>
+        <script src="assets/material-ember.js"></script>
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+        
+        {{content-for "body-footer"}}
+    </body>
 </html>
