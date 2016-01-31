@@ -1,0 +1,13 @@
+<div class='mdl-grid'>
+  {{#each inputs as |input|}}
+    <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdel-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone'>
+      <input class='mdl-textfield__input' name='{{input.name}}' value='{{input.value}}' type='text' pattern="-?[0-9]*(\.[0-9]+)?" min='{{input.min}}' max='{{input.max}}'>
+      <label class='mdl-textfield__label'>{{input.label}}</label>
+      <span class="mdl-textfield__error">Input is not a number</span>
+    </div>
+  {{/each}}
+  <div class='mdl-cell mdel-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone'>
+    <button class="mdl-button text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect" type='submit'>Run</button>
+  </div>
+</div>
+<!--<button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' type='submit'>Run</button>-->

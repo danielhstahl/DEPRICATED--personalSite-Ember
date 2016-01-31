@@ -3,12 +3,15 @@
     {{#each model as |skill|}}
         <div id='{{skill.id}}' class="mdl-cell mdl-cell--4-col-phone mdl-cell--6-col-tablet mdl-cell--8-col mdl-card mdl-shadow--2dp ">
             <div class="mdl-card__title card-style " style="background:url('{{skill.image}}') center / cover;">
-                
+
             </div>
             <div class="mdl-card__supporting-text">
                 <h2 class="mdl-card__title-text grey-font-800">{{skill.title}}</h2>
                {{{skill.text}}}
             </div>
+            {{control-form subpartial=skill.partial}}
+            
         </div>
+
     {{/each}}
 </div>

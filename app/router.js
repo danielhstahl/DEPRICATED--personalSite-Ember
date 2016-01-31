@@ -9,6 +9,9 @@ Router.map(function() {
   this.route('projects');
   this.route('research');
   this.route('about');
+  this.route('creditrisk');
+  this.route('marketrisk');
+  this.route('operationalrisk');
 });
 
 export default Router;
