@@ -57,11 +57,16 @@ var inputs=[{
 export default Ember.Component.extend({
   socketIOService: Ember.inject.service('socket-io'),
   socket:'',
-  classNames: ['mdl-card__supporting-text', 'hidden'],
-  hidden:this.isHidden,
+  classNameBindings: ['hidden'],
+  hidden:true,
+  didUpdateAttrs(){
+    this.set('hidden', !this.isHidden);
+  },
   willRender() {
+    console.log(this.get('hidden'));
     var self=this;
     self._super.apply(this, arguments);
+    this.get('socketIOService').closeSocketFor('http://localhost:7000/');
     self.socket = this.get('socketIOService').socketFor('http://localhost:7000/');
     self.socket.on('connect', function() {
       self.socket.emit('creditrisk', 'hello');

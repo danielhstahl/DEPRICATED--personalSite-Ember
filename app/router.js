@@ -12,6 +12,9 @@ Router.map(function() {
   this.route('creditrisk');
   this.route('marketrisk');
   this.route('operationalrisk');
+  this.route('opsrisk-documentation');
+  this.route('creditrisk-documentation');
+  this.route('marketrisk-documentation');
 });
 
 export default Router;

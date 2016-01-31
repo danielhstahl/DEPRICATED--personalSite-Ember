@@ -13,37 +13,37 @@ var inputs=[{
   max:5
 },{
   name:'alpha',
-  label:'Mean reversion of frequency',
+  label:'Speed',
   value:0.4,
   min:0.001,
   max:0.9
 },{
   name:'sigma',
-  label:'Volatility of frequency',
+  label:'Volatility',
   value:0.3,
   min:0.001,
   max:0.5
 },{
   name:'lambda',
-  label:'Level of frequency',
+  label:'Lambda',
   value:100,
   min:1,
   max:200
 },{
   name:'alphaStable',
-  label:'Alpha for Stable Severity',
+  label:'Alpha',
   value:1.1,
   min:1,
   max:2
 },{
   name:'muStable',
-  label:'Shift for Severity',
+  label:'Shift (Stable)',
   value:1300,
   min:1,
   max:2000
 },{
   name:'cStable',
-  label:'Scale for Severity',
+  label:'Scale (Stable)',
   value:100,
   min:1,
   max:200
@@ -75,6 +75,11 @@ var inputs=[{
 export default Ember.Component.extend({
   socketIOService: Ember.inject.service('socket-io'),
   socket:'',
+  classNameBindings: ['hidden'],
+  hidden:true,
+  didUpdateAttrs(){
+    this.set('hidden', !this.isHidden);
+  },
   willRender() {
     var self=this;
     self._super.apply(this, arguments);

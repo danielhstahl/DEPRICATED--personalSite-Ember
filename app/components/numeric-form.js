@@ -1,6 +1,6 @@
 import Ember from 'ember';
 export default Ember.Component.extend({
-  tagName:'form'
+  tagName:'form',
   submit(event){
     event.preventDefault();
     var n=event.target.length;
