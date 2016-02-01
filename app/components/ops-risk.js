@@ -1,5 +1,5 @@
 import Ember from 'ember';
-var inputs=[{
+/*var inputs=[{
   name:'t',
   label:'Time Horizon',
   value:1,
@@ -71,7 +71,7 @@ var inputs=[{
   value:256,
   min:32,
   max:256
-}];
+}];*/
 export default Ember.Component.extend({
   socketIOService: Ember.inject.service('socket-io'),
   socket:'',

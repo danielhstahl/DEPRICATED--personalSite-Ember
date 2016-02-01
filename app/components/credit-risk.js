@@ -1,5 +1,5 @@
 import Ember from 'ember';
-var inputs=[{
+/*var inputs=[{
   name:'n',
   label:'Number of Assets',
   value:100000,
@@ -53,7 +53,7 @@ var inputs=[{
   value:128,
   min:32,
   max:256
-}];
+}];*/
 export default Ember.Component.extend({
   socketIOService: Ember.inject.service('socket-io'),
   socket:'',
@@ -63,7 +63,6 @@ export default Ember.Component.extend({
     this.set('hidden', !this.isHidden);
   },
   willRender() {
-    console.log(this.get('hidden'));
     var self=this;
     self._super.apply(this, arguments);
     this.get('socketIOService').closeSocketFor('http://localhost:7000/');

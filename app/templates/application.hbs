@@ -2,60 +2,13 @@
     <div class="mdl-layout__drawer mdl-color--grey-800 no-border">
        <!-- <span class="mdl-layout-title">-->
         <div class='mdl-color--grey-900'>
-            <div class="mdl-grid "> 
-                <div class='mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone'>
-                    <img class="avatar icon float-right contact-image no-bottom-margin" src="/assets/images/avatar.png">
-                </div>
-                <h4 class='mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--3-col-phone align-contact text-color-contact no-bottom-margin name-and-avatar right-align'>
-                    Daniel Stahl
-                </h4>
-            </div>
-            <div class="mdl-grid no-padding-no-margin"> 
-                <div class='mdl-cell mdl-cell--4-col contact-icon'>
-                    <a href='https://www.linkedin.com/profile/view?id=AAIAAAYja3AB_fq6IhUtF5CBw1yjTHheP8YIooE&trk=nav_responsive_tab_profile'>
-                        <img src='assets/icons/linkedingrey.svg' class='icon float-right'>
-                    </a>
-                </div> 
-                <div class='mdl-cell mdl-cell--4-col contact-icon'>
-                    <a href='https://plus.google.com/u/0/+DanielStahl1138'>
-                        <img src='assets/icons/googleplusgrey.svg' class='icon float-right'>
-                    </a>
-                </div> 
-                <div class='mdl-cell mdl-cell--4-col contact-icon'>
-                    <a href='https://github.com/phillyfan1138'>
-                        <img src='assets/icons/githubgrey.svg' class='icon float-right'>
-                    </a>
-                </div>
-
-            </div>
+            {{avatar-contact}}
         </div>
-        
         {{nav-bar}}
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-            <!--<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Welcome</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris sagittis pellentesque lacus eleifend lacinia...
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  Get Started
-                </a>
-              </div>
-              <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                  <i class="material-icons">share</i>
-                </button>
-              </div>
-            </div>-->
             {{outlet}}
         </div>
     </main>
 </div>
-
-
