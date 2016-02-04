@@ -1,5 +1,5 @@
 import Ember from 'ember';
-/*var inputs=[{
+var inputs=[{
   name:'t',
   label:'Time Horizon',
   value:1,
@@ -71,36 +71,58 @@ import Ember from 'ember';
   value:256,
   min:32,
   max:256
-}];*/
+}];
 export default Ember.Component.extend({
-  socketIOService: Ember.inject.service('socket-io'),
-  socket:'',
+  //socketIOService: Ember.inject.service('socket-io'),
+  //socket:'',
   classNameBindings: ['hidden'],
   hidden:true,
+  showChart:false,
+  chartOptions: {
+    chart: {
+        type: 'line'
+    },
+    legend:{
+      enabled:false
+    },
+    title: {
+      text: 'Distribution of Operational Risk Losses'
+    }/*,
+    xAxis: {
+      categories: ['Apples', 'Bananas', 'Oranges']
+    },
+    yAxis: {
+      title: {
+          text: 'Fruit eaten'
+      }
+    }*/
+  },
+  chartData: "",
+  //socket:'',
   didUpdateAttrs(){
     this.set('hidden', !this.isHidden);
   },
-  willRender() {
+  didInitAttrs() {
     var self=this;
+    //this.set('socket', this.socket);
     self._super.apply(this, arguments);
-    self.socket = this.get('socketIOService').socketFor('http://localhost:7000/');
-    self.socket.on('connect', function() {
-      self.socket.emit('opsrisk', 'hello');
-      //socket.emit('Hello server');
-    }, this);
+    self.socket.emit('opsrisk', 'hello');
     self.socket.on('opsRisk-data', this.onMessage, this);
   },
   onMessage: function(data) {
-    console.log(data);
-    // This is executed within the ember run loop
+    data=JSON.parse(data);
+    var series=[{color:'#c1c1c1', pointStart:data.xmin, pointInterval:data.dx, data:data.y}];
+    this.set('chartData', series);
+    this.set('showChart', true);
+    this.sendAction('emitShowChart', true);
   },
   inputs:inputs,
   actions:{
     submitInputs(obj){
       this.socket.emit('getOps', obj);
     }
-  },
+  }/*,
   willDestroy() {
     this.get('socketIOService').closeSocketFor('http://localhost:7000/');
-  }
+  }*/
 });

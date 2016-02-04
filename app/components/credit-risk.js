@@ -1,5 +1,5 @@
 import Ember from 'ember';
-/*var inputs=[{
+var inputs=[{
   name:'n',
   label:'Number of Assets',
   value:100000,
@@ -53,37 +53,65 @@ import Ember from 'ember';
   value:128,
   min:32,
   max:256
-}];*/
+}];
 export default Ember.Component.extend({
-  socketIOService: Ember.inject.service('socket-io'),
-  socket:'',
+  //socketIOService: Ember.inject.service('socket-io'),
+  //socket:'',
   classNameBindings: ['hidden'],
   hidden:true,
+  showChart:false,
+  showProgress:false,
+  chartOptions: {
+    chart: {
+        type: 'line'
+    },
+    legend:{
+      enabled:false
+    },
+    title: {
+      text: 'Distribution of Credit Loss'
+    }
+  },
+  chartData: "",
   didUpdateAttrs(){
     this.set('hidden', !this.isHidden);
   },
-  willRender() {
+  didInitAttrs() {
     var self=this;
     self._super.apply(this, arguments);
-    this.get('socketIOService').closeSocketFor('http://localhost:7000/');
-    self.socket = this.get('socketIOService').socketFor('http://localhost:7000/');
-    self.socket.on('connect', function() {
-      self.socket.emit('creditrisk', 'hello');
-      //socket.emit('Hello server');
-    }, this);
+    self.socket.emit('creditrisk', 'hello');
     self.socket.on('creditRisk-data', this.onMessage, this);
   },
   onMessage: function(data) {
-    console.log(data);
+    data=JSON.parse(data);
+    //console.log(data);
+    /*var key=Object.keys(data);
+    if(key[0]==='progress'){
+      console.log(data);
+      //this.set
+    }
+    else{*/
+      var series=[{color:'#c1c1c1', pointStart:data.xmin, pointInterval:data.dx, data:data.y}];
+      this.set('chartData', series);
+      this.set('showProgress', false);
+      this.set('showChart', true);
+      this.sendAction('emitShowChart', true);
+    //}
+
+    //console.log(data);
     // This is executed within the ember run loop
   },
   inputs:inputs,
   actions:{
     submitInputs(obj){
+      this.set('showProgress', true);
       this.socket.emit('getCredit', obj);
-    }
-  },
+    }/*,
+    toggleChart(){
+      this.set('showChart', false);
+    }*/
+  }/*,
   willDestroy() {
     this.get('socketIOService').closeSocketFor('http://localhost:7000/');
-  }
+  }*/
 });

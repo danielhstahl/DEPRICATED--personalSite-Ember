@@ -1,3 +1,10 @@
-{{show-model-button onclick=(action 'toggleForm')}}
 
-{{numeric-form inputs=inputs isHidden=hasClicked}}
+<div class='mdl-card__supporting-text mdl-card--border mdl-grid no-margin'> <!-- no-border no-margin-->
+  {{show-model-button parametersAreShowing=parametersAreShowing showChart=showChart onclick=(action 'toggleForm')}}
+  <div class='mdl-cell mdl-cell--2-col-phone'>
+  <!--<div class='right-align '>-->
+    <a class=" mdl-button uniform-icon text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect" target="_blank" href='{{documentationUrl}}'><i class="material-icons">description</i></a>
+  </div>
+
+</div>
+{{component subpartial isHidden=somethingIsShowing showChart=showChart emitShowChart=(action 'setShowChart') socket=socket}}

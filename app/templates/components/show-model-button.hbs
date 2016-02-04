@@ -1,7 +1,12 @@
 <button class="mdl-button text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect">
-  {{#if hasClicked}}
-  Hide Model Parameters
+  {{#if parametersAreShowing}}
+    <i class="material-icons">arrow_upward</i>
   {{else}}
-  Enter Model Parameters
+    {{#if showChart}}
+      <i class="material-icons">arrow_back</i>
+    {{else}}
+      <i class="material-icons">arrow_downward</i>
+    {{/if}}
+
   {{/if}}
 </button>

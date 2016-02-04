@@ -1,1 +1,9 @@
-{{numeric-form isHidden=isHidden inputs=inputs onSubmit=(action 'submitInputs')}}
+{{#if showProgress}}
+{{progress-bar}}
+{{else}}
+  {{#if showChart}}
+    {{high-charts mode=chartMode content=chartData chartOptions=chartOptions theme=theme}}
+  {{else}}
+    {{numeric-form inputs=inputs onSubmit=(action 'submitInputs')}}
+  {{/if}}
+{{/if}}

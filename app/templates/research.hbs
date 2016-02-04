@@ -1,4 +1,4 @@
-<div class='vertical-space mdl-layout--small-screen-only'></div><!--this is to drop the card below the hamburger bar-->
+
 <div class='mdl-grid max-width'>
     {{#each model as |research|}}
         <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--6-col-tablet mdl-cell--8-col mdl-card mdl-shadow--2dp ">
@@ -9,9 +9,9 @@
                {{{research.text}}}
             </div>
             <div class="mdl-card__supporting-text">
-              {{#link-to research.route}}{{research.label}}{{/link-to}}
+              <a href='{{research.internalUrl}}' target="_blank">{{research.label}}</a>
               {{#if research.url}}
-                <a href='{{research.url}}'>External link</a>
+                <a href='{{research.url}}'  target="_blank">External link</a>
               {{/if}}
             </div>
         </div>
