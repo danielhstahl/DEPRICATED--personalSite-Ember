@@ -1,0 +1,11 @@
+<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone'>
+  <input class='mdl-textfield__input' name='stuff' onclick={{action 'clickInput'}} value='{{value}}' type='text'>
+  <label class='mdl-textfield__label'>{{label}}</label>
+  <span class="mdl-textfield__error">Input is not a number</span>
+</div>
+
+<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect">
+  {{#each content as |val|}}
+    <li class="mdl-menu__item" value='{{get val optionValuePath}}' onclick={{action 'changeValue' value="target.value"}}>{{get val optionLabelPath}}</li>
+  {{/each}}
+</ul>
