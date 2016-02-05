@@ -1,43 +1,20 @@
 import Ember from 'ember';
-
+//import computed from 'ember-new-computed'; //replicate menu?
 export default Ember.Component.extend({
-  showMenu:false,
+  //showMenu:false,
   /*didInsertElement(){
     window.componentHandler.upgradeDom();//upgrade mdl
   },*/
-  didRender(){
-    //console.log("hello")
-    window.componentHandler.upgradeDom();//upgrade mdl
-    /*var addEventListeners=function(e){
-      var onClickFunction=function(el){
-        t.value=el.textContent;
-      };
-      var t=e.querySelector("input");
-      var li=e.querySelectorAll("li");
-      e.querySelector("i");
-      var n=li.length;
-      for(var i=0; i<n; i++){
-        li[i].onclick=onClickFunction;
-      }
-
-    };
-    var e=document.querySelectorAll(".getmdl-select");
-    var n=e.length;
-    for(var i=0; i<n; i++){
-      addEventListeners(e[i]);
-    }*/
-
-
-  },
+  /*_buttonId: computed('elementId', {
+    get() {
+      return `${this.get('elementId')}-button`;
+    }
+  }),*/
   actions:{
     changeValue(e){
-      console.log(e);
+      this.get('onSelect')(e.value, e.label);
 
       //this.value=
-    },
-    clickInput(){
-      console.log("hello");
-      this.set('showMenu', true);
     }
   }
 

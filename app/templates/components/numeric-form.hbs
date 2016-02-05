@@ -1,14 +1,17 @@
 <div class='mdl-grid'>
   {{#each inputs as |input|}}
-    <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone'>
-      <input class='mdl-textfield__input' name='{{input.name}}' value='{{input.value}}' type='text' pattern="-?[0-9]*(\.[0-9]+)?">
-      <label class='mdl-textfield__label'>{{input.label}}</label>
-      <span class="mdl-textfield__error">Input is not a number</span>
-    </div>
-
+    {{#if input.errMessage}}
+      {{mdl-textfield label=input.label value=input.value pattern="-?[0-9]*(\.[0-9]+)?" errorMessage=input.errMessage class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone"}}
+    {{else}}
+      {{mdl-textfield label=input.label value=input.value pattern="-?[0-9]*(\.[0-9]+)?" errorMessage="Input is not a number" class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone"}}
+    {{/if}}
   {{/each}}
   <div class='mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone'>
-    <button class="mdl-button text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect" type='submit'>Run</button>
+    {{#if notReady}}
+      <button class="mdl-button text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect" type='submit' disabled>{{notReady}}</button>
+    {{else}}
+      <button class="mdl-button text-color-contact mdl-color--grey-800 mdl-button--raised mdl-js-button mdl-js-ripple-effect" type='submit'>Run</button>
+    {{/if}}
   </div>
 </div>
 <!--<button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' type='submit'>Run</button>-->

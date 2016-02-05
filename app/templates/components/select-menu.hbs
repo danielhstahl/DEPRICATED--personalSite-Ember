@@ -1,9 +1,9 @@
-
-{{select-mdl content=asset optionValuePath="value" label="Choose Asset" optionLabelPath="label" value=currentAsset.value}}
-{{#each (get assetParameters currentAsset.value) as |input|}}
-  <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone'>
-    <input class='mdl-textfield__input' name='{{input.id}}' value='{{input.value}}' type='text' pattern="-?[0-9]*(\.[0-9]+)?">
-    <label class='mdl-textfield__label'>{{input.label}}</label>
-    <span class="mdl-textfield__error">{{input.errMessage}}</span>
-  </div>
-{{/each}}
+<div class='mdl-grid'>
+  {{select-mdl content=asset optionValuePath="value" optionLabelPath="label" value=currentAsset onSelect=onSelect}}
+  <span class='small-padding'>{{currentLabel}}</span>
+</div>
+{{#if stillWaiting}}
+  {{numeric-form inputs=selectedParameters notReady='Waiting for market data' onSubmit=onSubmit}}
+{{else}}
+  {{numeric-form inputs=selectedParameters onSubmit=onSubmit}}
+{{/if}}

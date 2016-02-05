@@ -1,5 +1,9 @@
-{{#if showChart}}
-  {{high-charts mode=chartMode content=chartData chartOptions=chartOptions theme=theme}}
+{{#if showProgress}}
+  {{progress-bar socket=socket}}
 {{else}}
-  {{select-menu asset=assets assetParameters=assetParameters }}
+  {{#if showChart}}
+    {{high-charts mode=chartMode content=chartData chartOptions=chartOptions theme=theme}}
+  {{else}}
+    {{select-menu asset=assets standardParameters=standardParameters assetParameters=assetParameters stillWaiting=stillWaiting onSubmit=(action 'submitInputs') onSelect=(action 'onSelect') currentAsset=currentAsset currentLabel=currentLabel}}
+  {{/if}}
 {{/if}}

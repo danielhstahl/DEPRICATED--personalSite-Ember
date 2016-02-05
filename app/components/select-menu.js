@@ -1,13 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  currentAsset:{
-    value:0
+  //classNames:['mdl-grid'],
+  selectedParameters:[],
+  didReceiveAttrs(){
+    
+    this.set('selectedParameters', this.assetParameters[this.currentAsset].concat(this.standardParameters));
+    //console.log(this.get('selectedParameters'));
   },
-  actions:{
-    changeValue(e){
+  /*actions:{
+    selectedValue(e){
       this.set('currentAsset', e);
-      //console.log(this.currentAsset);
+      console.log(e);
     }
-  }
+  }*/
 });
