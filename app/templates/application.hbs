@@ -1,15 +1,14 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-    <div class="mdl-layout__drawer mdl-color--grey-800 no-border">
-       <!-- <span class="mdl-layout-title">-->
-        <div class='mdl-color--grey-900'>
-            {{avatar-contact}}
-        </div>
-        {{nav-bar}}
+{{#mdl-nav includeHeader=false  fixedDrawer=true}}
+  {{#mdl-nav-drawer class="mdl-layout__drawer mdl-color--grey-800 no-border"}}
+    <div class='mdl-color--grey-900'>
+      {{avatar-contact}}
     </div>
-    <main class="mdl-layout__content">
-        <div class="page-content">
-          <div class='vertical-space mdl-layout--small-screen-only'></div><!--this is to drop the card below the hamburger bar-->
-            {{outlet}}
-        </div>
-    </main>
-</div>
+    {{nav-bar}}
+  {{/mdl-nav-drawer}}
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <div class='vertical-space mdl-layout--small-screen-only'></div><!--this is to drop the card below the hamburger bar-->
+        {{outlet}}
+    </div>
+  </main>
+{{/mdl-nav}}
