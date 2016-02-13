@@ -20,6 +20,12 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  ENV.contentSecurityPolicy = {
+
+  // Allow scripts from https://cdn.mxpnl.com
+    //'script-src': ["'self'", "https://cdn.mxpnl.com"],
+
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -42,7 +48,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-73388166-1'
+    };
   }
 
   return ENV;
