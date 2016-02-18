@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ResetScroll from '../mixins/reset-scroll';
 var cards=[{
     title:'Credit Risk',
     image:'../assets/images/creditRisk.jpg',
@@ -17,7 +18,11 @@ var cards=[{
     internalUrl:'assets/pdf/OpsRiskPaper.pdf',
     label:'PDF of paper'
 }];
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
+  activate: function() {
+    this._super.apply(this, arguments); // Call super at the beginning
+    // Your stuff
+  },
   model:function(){
       return cards;
   }

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ResetScroll from '../mixins/reset-scroll';
 var cards=[{
     id:'creditRisk',
     title:'Credit Risk',
@@ -27,8 +28,13 @@ var cards=[{
     documentationUrl:'assets/pdf/OpsRiskPaper.pdf'
     //inputs:'opsRiskInputs'
 }];
-export default Ember.Route.extend({
-    model:function(){
-        return cards;//{cards:cards, creditRiskInputs:creditInputs, opsRiskInputs:opsInputs};
-    }
+
+export default Ember.Route.extend(ResetScroll, {
+  activate: function() {
+    this._super.apply(this, arguments); // Call super at the beginning
+    // Your stuff
+  },
+  model:function(){
+      return cards;
+  }
 });
