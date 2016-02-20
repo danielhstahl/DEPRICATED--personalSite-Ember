@@ -2,19 +2,23 @@ import Ember from 'ember';
 var navLinks=[{
     url:'index',
     display:'Home',
-    icon:'home'
+    //icon:'home'
 },{
     url:'about',
     display:'About',
-    icon:'info'
+    //icon:'info'
+},{
+    url:'blog',
+    display:'Thoughts',
+    //icon:'info'
 },{
     url:'projects',
     display:'Projects',
-    icon:'widgets'
+    //icon:'widgets'
 },{
     url:'research',
     display:'Research',
-    icon:'school'
+    //icon:'school'
 }];
 export default Ember.Component.extend({
     tagName:'nav',
