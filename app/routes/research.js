@@ -25,6 +25,14 @@ var cards=[{
     //route:'opsrisk-documentation',
     internalUrl:'assets/pdf/CreditRiskExtensions.pdf',
     label:'PDF of paper'
+},
+{
+    title:'Liquidity Risk (unpublished)',
+    image:'../assets/images/liquidity.jpg',
+    text:'This paper is a short description and proposal for managing liquidity risk',
+    //route:'opsrisk-documentation',
+    internalUrl:'assets/pdf/LiquidityRisk.pdf',
+    label:'PDF of paper'
 }];
 export default Ember.Route.extend(ResetScroll, {
   activate: function() {
