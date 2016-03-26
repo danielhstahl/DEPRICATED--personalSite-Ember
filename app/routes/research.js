@@ -17,6 +17,14 @@ var cards=[{
     //route:'opsrisk-documentation',
     internalUrl:'assets/pdf/OpsRiskPaper.pdf',
     label:'PDF of paper'
+},
+{
+    title:'Credit Risk Extensions (unpublished)',
+    image:'../assets/images/creditRiskExtensions.jpg',
+    text:'This paper describes in greater detail how to allocate risk to individual loans including marginal liquidity risk',
+    //route:'opsrisk-documentation',
+    internalUrl:'assets/pdf/CreditRiskExtensions.pdf',
+    label:'PDF of paper'
 }];
 export default Ember.Route.extend(ResetScroll, {
   activate: function() {

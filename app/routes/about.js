@@ -7,6 +7,11 @@ var cards=[{
     title:'Mathematical Modeling',
     image:'../assets/images/model.jpg',
     partial:"components/model"
+},{
+    id:'liquidity',
+    title:'Liquidity Risk',
+    image:'../assets/images/liquidity.jpg',
+    partial:"components/liquidity"
 },
 {
     id:'sql',
