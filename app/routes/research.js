@@ -15,6 +15,7 @@ var cards=[{
     image:'../assets/images/operationalRisk.jpg',
     text:'This paper significantly extends the standard LDA operational loss framework to include correlation between severity and frequency and auto-correlation in frequency.  The distribution can be recovered practically instantly even for very long tailed severity distributions.',
     //route:'opsrisk-documentation',
+    url:'http://www.risk.net/journal-of-operational-risk/technical-paper/2454227/operational-loss-with-correlated-frequency-and-severity-an-analytical-approach',
     internalUrl:'assets/pdf/OpsRiskPaper.pdf',
     label:'PDF of paper'
 },
